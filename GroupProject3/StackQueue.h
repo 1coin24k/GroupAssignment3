@@ -116,7 +116,7 @@ void enqueue(int value, LList list) {
 		list -> head = np;
 		list -> tail = np;
 	}
-	// if queue if not empty, add it to the tail of list
+	// if queue is not empty, add it to the tail of list
 	else{
 		list -> tail -> next = np;
 		list -> tail = np;
