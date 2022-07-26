@@ -37,11 +37,12 @@ int main() {
 
 	//d)	Remove an element from queue
 	dequeue(Queue);
+	
 	//e)	Display the next element to be removed(do not remove) in the stack
 	top(Stack);
 
 	//f)	Display the next element to be removed(do not remove) in the queue.*/
-	
+	top(Queue);
 
 
 
