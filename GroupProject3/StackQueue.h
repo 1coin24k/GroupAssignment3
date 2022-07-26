@@ -52,6 +52,7 @@ void printList(LList list) {
 
 }
 
+// O(1)
 // implementation of stack function 
 void push(int value, LList list) {
 	NodePtr np = makeNode(value);
@@ -78,7 +79,7 @@ void push(int value, LList list) {
 }
 
 
-
+// O(1)
 int pop(LList list) {
 	NodePtr np = list->head;
 	if (list->head == NULL) {
@@ -104,6 +105,7 @@ int top(LList list) {
 	}
 }
 
+// Using array: O(1)  Using linked list： O（1） or O(N) depends on how many operations
 // implementation of the queue using singly linked list
 // add an item to the queue
 void enqueue(int value, LList list) {
@@ -124,6 +126,7 @@ void enqueue(int value, LList list) {
 
 }
 
+// Using array: O(1)  Using linked list： O（1） or O(N) depends on how many operations
 // take an item off the queue
 int  dequeue(LList list) {
 	// end the program if the queue if empty
@@ -141,6 +144,7 @@ int  dequeue(LList list) {
 	return hold;
 }
 
+//Peek takes Linear O(N) / O(1)
 int peek(LList list) {
 
 
