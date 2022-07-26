@@ -105,15 +105,42 @@ int top(LList list) {
 }
 
 // implementation of the queue using singly linked list
+// add an item to the queue
 void enqueue(int value, LList list) {
-
+	// allocate storage for new node
+	NodePtr np = (NodePtr) malloc(sizeof(Node));
+	np -> num = value;
+	np -> next = NULL;
+	// if empty queue, set head and tail point to it
+	if(list -> head == NULL){
+		list -> head = np;
+		list -> tail = np;
+	}
+	// if queue if not empty, add it to the tail of list
+	else{
+		list -> tail -> next = np;
+		list -> tail = np;
+	}
 
 }
-//int  dequeue(LList list) {
-//	if (list.head)
-//		printf("empty");
-//
-//}
+
+// take an item off the queue
+int  dequeue(LList list) {
+	// end the program if the queue if empty
+	if (list -> head == NULL){
+		printf("The queue is empty");
+		exit(1);
+	}
+	int hold = list -> head -> num;
+	NodePtr temp = list -> head;
+	list -> head = list -> head -> next;
+	// queue becomes empty if head is null after remove the head node
+	if (list -> head == NULL)
+		list -> tail = NULL;
+	free(temp);
+	return hold;
+}
+
 int peek(LList list) {
 
 
